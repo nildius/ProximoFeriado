@@ -8,6 +8,7 @@
     <body>
        <div class="ribbon"><span>DEV 0.1a</span></div>
         <div class="main">
+            <p class='pretitle'>HOY ES <span id='fecha'></span></p>
             <h2>FALTAN</h2>
             <p class="dias">
                 <span class="num" id="num">100</span>
@@ -19,8 +20,13 @@
             </div>
         </div>
     </body>
+    <script src='plugins/jquery.js'></script>
     <script src='plugins/countUp.min.js'></script>
+    <script src='plugins/moment-with-locales.js'></script>
     <script>
+    console.log(moment.locale('es'));
+    $("#fecha").text(moment().format("dddd DD") + " de " + moment().format("MMMM"))
+
     var options = {
       useEasing: true,
       useGrouping: true,
