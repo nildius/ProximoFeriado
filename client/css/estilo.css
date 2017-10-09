@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400');
+
+body {
+    background: #006db3;
+    font-family: 'NUNITO';
+}
+
+.main {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.main h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    font-weight: lighter;
+    margin: 0;
+}
+
+.main p {
+    text-align: center;
+    color: #fff;
+    margin: 0;
+}
+
+.main p.extra {
+    margin-top: -25px;
+}
+
+.main .dias {
+    text-align: center;
+    font-size: 140px;
+    margin: 0;
+    color: #63ccff;
+}
+
+.main hr {
+    max-width: 600px;
+    outline: 0;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 20px auto;
+}
+
+.descripcion {
+    max-width: 600px;
+    margin: auto auto;
+}
+
+.descripcion p {
+    text-align: justify;
+}
+
+
+/* ##### RIBBONS ##### */
+.box {
+  width: 200px; height: 300px;
+  position: relative;
+  border: 1px solid #BBB;
+  background: #EEE;
+}
+.ribbon {
+  position: absolute;
+  right: 0px; top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px; height: 75px;
+  text-align: right;
+}
+.ribbon span {
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  width: 100px;
+  display: block;
+  background: #79A70A;
+  background: linear-gradient(#a9c90d 0%, #90ab0b 100%);
+  position: absolute;
+  top: 19px; right: -21px;
+}
+.ribbon span::before {
+  content: "";
+  position: absolute; left: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid #79A70A;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #79A70A;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <meta charset='UTF-8'>
+        <link rel="stylesheet" href="css/estilo.css">
+    </head>
+    <body>
+       <div class="ribbon"><span>DEV 0.1a</span></div>
+        <div class="main">
+            <h2>FALTAN</h2>
+            <p class="dias">
+                <span class="num" id="num">100</span>
+            </p>
+            <p class='extra'>días para el próximo feriado</p>
+            <hr>
+            <div class="descripcion">
+                <p>El Lunes 09 de Julio se conmemora el Día de la Bandera  Esa fecha es feriado nacional y día festivo dedicado a la bandera argentina y a la conmemoración de su creador, Manuel Belgrano, fallecido en ese día de 1820. La fecha fue decretada por ley 12.361 del 8 de junio de 1938, con aprobación del Congreso, por el entonces presidente de la Nación Argentina, Roberto M. Ortiz</p>
+            </div>
+        </div>
+    </body>
+    <script src='plugins/countUp.min.js'></script>
+    <script>
+    var options = {
+      useEasing: true,
+      useGrouping: true,
+      separator: ',',
+      decimal: '.',
+    };
+    var demo = new CountUp('num', 0, 100, 0, 2.5, options);
+    if (!demo.error) {
+      demo.start();
+    } else {
+      console.error(demo.error);
+    }
+</script>
+</html>
