@@ -11,7 +11,7 @@ class ApiController extends Controller
 
 	public static function error($content)
 	{
-		if($content){                           
+		if(sizeOf($content) > 0){                           
             $status = ["error" => "no", "description" => null];
         }
         else{
@@ -23,9 +23,10 @@ class ApiController extends Controller
 
     public function show($country, $date)
     {
-        $content = Holiday::where('date', '>', $date)
-                            ->where('country', '=', $country)
-                            ->select('date', 'name', 'description')->first();
+        $content = Holiday::select('date', 'name', 'description')
+        					->nextholiday($date)
+        					->country($country)
+                            ->first();
         
  		$status = $this->error($content);
 
@@ -35,15 +36,21 @@ class ApiController extends Controller
 
     public function showAll($country, $date)
    	{
+   		// Start and end of month, we will need this for the lapse query scope 
    		$start = Carbon::parse($date)->startOfMonth();
    		$end = Carbon::parse($date)->endOfMonth();
-        $content = Holiday::where('date', '>=', $start)
-        					->where('date', '<=', $end)
-                            ->where('country', '=', $country)
-                            ->select('date', 'name', 'description')->get();
+
+   		// Getting the holidays on that lapse
+        $content = Holiday::select('date', 'name', 'description')->lapse($start, $end)->country($country)->get();
+
+        // Calling the function "error"
         $status = $this->error($content);
+
+        // Formatting the Json
         $holiday = ["status" => $status, "content" => $content];
+
         return json_encode($holiday);
 
    	}
 }
+
