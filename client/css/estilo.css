@@ -57,7 +57,15 @@ body {
     margin: auto auto;
 }
 
+.descripcion h3 {
+    color: #FFF;
+    margin: 10px 0;
+    font-weight: lighter;
+    text-align: center;
+}
+
 .descripcion p {
+    font-size: 15px;
     text-align: justify;
 }
 
