@@ -28,9 +28,6 @@ app/Http/Kernel\.php
 
 
 
-
-database/seeds/DatabaseSeeder\.php
-
 package\.json
 
 composer\.lock
