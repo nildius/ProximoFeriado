@@ -14,3 +14,4 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/show/{country}/{date}', 'ApiController@show');
+Route::get('/showall/{country}/{date}', 'ApiController@showAll');
